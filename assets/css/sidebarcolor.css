@@ -1,0 +1,326 @@
+/* Default nav link style */
+.sidebar .nav > .nav-item a,
+.sidebar[data-background-color="dark"] .nav > .nav-item a {
+  color: #ffffff;
+}
+.sidebar .nav > .nav-item a:hover,
+.sidebar .nav > .nav-item a i:hover,
+.sidebar .nav > .nav-item.active > a p:hover {
+  color: #ffffff;
+}
+
+/* Color-matched text, icon, active, and hover */
+.sidebar[data-background-color="dark"] {
+  background: #1a2035;
+}
+.sidebar[data-background-color="dark"] .nav > .nav-item a,
+.sidebar[data-background-color="dark"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="dark"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="dark"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="dark"] .nav > .nav-item a i,
+.sidebar[data-background-color="dark"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="dark"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+
+.sidebar[data-background-color="blue"] {
+  background: #1572e8 !important;
+}
+.sidebar[data-background-color="blue"] .nav > .nav-item a,
+.sidebar[data-background-color="blue"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="blue"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="blue"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="blue"] .nav > .nav-item a i,
+.sidebar[data-background-color="blue"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="blue"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="blue"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="blue"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+.sidebar[data-background-color="purple"] {
+  background: #6861CE;
+}
+.sidebar[data-background-color="purple"] .nav > .nav-item a,
+.sidebar[data-background-color="purple"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="purple"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="purple"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="purple"] .nav > .nav-item a i,
+.sidebar[data-background-color="purple"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="purple"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="purple"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="purple"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+
+.sidebar[data-background-color="light-blue"] {
+  background: #0bf !important;
+}
+.sidebar[data-background-color="light-blue"] .nav > .nav-item a,
+.sidebar[data-background-color="light-blue"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="light-blue"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="light-blue"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="light-blue"] .nav > .nav-item a i,
+.sidebar[data-background-color="light-blue"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="light-blue"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="light-blue"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="light-blue"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+
+.sidebar[data-background-color="green"] {
+  background: #31ce36 !important;
+}
+.sidebar[data-background-color="green"] .nav > .nav-item a,
+.sidebar[data-background-color="green"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="green"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="green"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="green"] .nav > .nav-item a i,
+.sidebar[data-background-color="green"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="green"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+
+.sidebar[data-background-color="green"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="green"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+
+.sidebar[data-background-color="orange"] {
+  background: #ffad46 !important;
+}
+.sidebar[data-background-color="orange"] .nav > .nav-item a,
+.sidebar[data-background-color="orange"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="orange"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="orange"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="orange"] .nav > .nav-item a i,
+.sidebar[data-background-color="orange"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="orange"] .nav.nav-secondary > .nav-item.active a i {
+  color: #000000;
+}
+.sidebar[data-background-color="orange"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="orange"] .nav .nav-item:hover > a p {
+  color:white!important;
+}
+
+
+.sidebar[data-background-color="red"] {
+  background: #f25961 !important;
+}
+.sidebar[data-background-color="red"] .nav > .nav-item a,
+.sidebar[data-background-color="red"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="red"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="red"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="red"] .nav > .nav-item a i,
+.sidebar[data-background-color="red"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="red"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="red"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="red"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+
+.sidebar[data-background-color="white"] {
+  background: #ffffff;
+}
+.sidebar[data-background-color="white"] .nav > .nav-item a,
+.sidebar[data-background-color="white"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="white"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="white"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="white"] .nav > .nav-item a i,
+.sidebar[data-background-color="white"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="white"] .nav.nav-secondary > .nav-item.active a i {
+  color: #000000;
+}
+
+.sidebar[data-background-color="dark2"] {
+  background: #151a2b !important;
+}
+.sidebar[data-background-color="dark2"] .nav > .nav-item a,
+.sidebar[data-background-color="dark2"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="dark2"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="dark2"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="dark2"] .nav > .nav-item a i,
+.sidebar[data-background-color="dark2"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="dark2"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+
+.sidebar[data-background-color="blue2"] {
+  background: #1269db !important;
+}
+.sidebar[data-background-color="blue2"] .nav > .nav-item a,
+.sidebar[data-background-color="blue2"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="blue2"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="blue2"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="blue2"] .nav > .nav-item a i,
+.sidebar[data-background-color="blue2"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="blue2"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="blue2"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="blue2"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+.sidebar[data-background-color="purple2"] {
+  background: #5c55bf !important;
+}
+.sidebar[data-background-color="purple2"] .nav > .nav-item a,
+.sidebar[data-background-color="purple2"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="purple2"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="purple2"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="purple2"] .nav > .nav-item a i,
+.sidebar[data-background-color="purple2"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="purple2"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="purple2"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="purple2"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+
+.sidebar[data-background-color="light-blue2"] {
+  background: #3697e1 !important;
+}
+.sidebar[data-background-color="light-blue2"] .nav > .nav-item a,
+.sidebar[data-background-color="light-blue2"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="light-blue2"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="light-blue2"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="light-blue2"] .nav > .nav-item a i,
+.sidebar[data-background-color="light-blue2"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="light-blue2"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="light-blue2"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="light-blue2"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+.sidebar[data-background-color="green2"] {
+  background: #2bb930 !important;
+}
+.sidebar[data-background-color="green2"] .nav > .nav-item a,
+.sidebar[data-background-color="green2"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="green2"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="green2"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="green2"] .nav > .nav-item a i,
+.sidebar[data-background-color="green2"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="green2"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="green2"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="green2"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+
+.sidebar[data-background-color="orange2"] {
+  background: #ff9e27 !important;
+}
+.sidebar[data-background-color="orange2"] .nav > .nav-item a,
+.sidebar[data-background-color="orange2"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="orange2"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="orange2"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="orange2"] .nav > .nav-item a i,
+.sidebar[data-background-color="orange2"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="orange2"] .nav.nav-secondary > .nav-item.active a i {
+  color: #000000;
+}
+.sidebar[data-background-color="orange2"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="orange2"] .nav .nav-item:hover > a p {
+  color:white!important;
+}
+
+.sidebar[data-background-color="red2"] {
+  background: #ea4d56 !important;
+}
+.sidebar[data-background-color="red2"] .nav > .nav-item a,
+.sidebar[data-background-color="red2"] .nav > .nav-item a:hover,
+.sidebar[data-background-color="red2"] .nav > .nav-item.active > a p,
+.sidebar[data-background-color="red2"] .nav > .nav-item.active > a p:hover,
+.sidebar[data-background-color="red2"] .nav > .nav-item a i,
+.sidebar[data-background-color="red2"] .nav > .nav-item a i:hover,
+.sidebar[data-background-color="red2"] .nav.nav-secondary > .nav-item.active a i {
+  color: #ffffff;
+}
+.sidebar[data-background-color="red2"] .nav .nav-item:hover > a i,
+.sidebar[data-background-color="red2"] .nav .nav-item:hover > a p {
+  color:#082539!important;
+}
+
+
+
+/* Apply the correct icon color for each background color */
+.sidebar[data-background-color="white"] .nav.nav-secondary > .nav-item.active a i {
+  color:var(--secondary-color);
+}
+.sidebar .nav.nav-secondary>.nav-item.active a:before, .sidebar[data-background-color=white] .nav.nav-secondary>.nav-item.active a:before{
+    background: var(--secondary-color)!important;
+}
+.sidebar[data-background-color="dark"] .nav.nav-secondary > .nav-item.active a i {
+  color:var(--secondary-color);
+
+}
+.sidebar .nav.nav-secondary>.nav-item.active a:before, .sidebar[data-background-color=dark] .nav.nav-secondary>.nav-item.active a:before{
+   background: var(--secondary-color)!important;
+}
+
+.sidebar[data-background-color="blue"] .nav.nav-secondary > .nav-item.active a i {
+ color:#082539;
+}
+.sidebar .nav.nav-secondary>.nav-item.active a:before, .sidebar[data-background-color="blue"] .nav.nav-secondary>.nav-item.active a:before{
+ background: white!important;
+}
+.sidebar[data-background-color="purple"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+.sidebar[data-background-color="light-blue"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+.sidebar[data-background-color="green"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+.sidebar[data-background-color="orange"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+
+.sidebar .nav.nav-secondary>.nav-item.active a:before, .sidebar[data-background-color=orange] .nav.nav-secondary>.nav-item.active a:before{
+   background:white!important;
+}
+.sidebar[data-background-color="red"] .nav.nav-secondary > .nav-item.active a i {
+ color:#082539;
+}
+.sidebar[data-background-color="dark2"] .nav.nav-secondary > .nav-item.active a i {
+    color:var(--secondary-color);
+  }
+  .sidebar .nav.nav-secondary>.nav-item.active a:before, .sidebar[data-background-color=dark2] .nav.nav-secondary>.nav-item.active a:before{
+   background: var(--secondary-color)!important;
+}
+.sidebar[data-background-color="blue2"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+.sidebar .nav.nav-secondary>.nav-item.active a:before, .sidebar[data-background-color=blue2] .nav.nav-secondary>.nav-item.active a:before{
+   background: white!important;
+}
+.sidebar[data-background-color="purple2"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+.sidebar[data-background-color="light-blue2"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+.sidebar[data-background-color="green2"] .nav.nav-secondary > .nav-item.active a i {
+  color:#082539;
+}
+.sidebar[data-background-color="orange2"] .nav.nav-secondary > .nav-item.active a i {
+ color:#082539;
+}
+.sidebar[data-background-color="red2"] .nav.nav-secondary > .nav-item.active a i {
+ color:#082539;
+}
+
+
+

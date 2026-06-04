@@ -1,0 +1,392 @@
+@import url("/assets/css/global.css");
+.progress-text {
+	font-weight: bold;
+}
+.legend-box {
+	width: 55px;
+	height: 15px;
+	margin-right: 10px;
+}
+
+.legend-box.cash-in {
+	background-color: #007bff;
+}
+
+.legend-box.cash-out {
+	background-color: #ffc107;
+}
+
+.legend-text {
+	margin-right: 20px;
+}
+
+.current-progress {
+	margin-top: 20px;
+}
+
+.progress-text {
+	font-weight: bold;
+}
+.custom-success {
+	background-color: #007bff;
+}
+
+.custom-danger {
+	background-color: #ffc107;
+}
+
+.datepicker td,
+th {
+	text-align: center;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+.status-label {
+	font-size: 12px;
+	text-transform: capitalize !important;
+}
+
+/* Background gradients for different statuses */
+.status-label.success {
+	color: #23d160;
+}
+
+.status-label.pending {
+	color: #ffad04;
+}
+
+.status-label.failed {
+	color: #dc3545;
+}
+#defaultSelect {
+	color: initial;
+	background-color: initial;
+}
+
+/* .form-select.success {
+	color: #23d160 !important;
+}
+
+.form-select.pending {
+	color: #ffad04 !important;
+}
+
+.form-select.failed {
+	color: #dc3545 !important;
+} */
+/* Background gradients for different statuses */
+/* option[value="all"] {
+	background-color: #f8f9fa;
+	color: #333;
+}
+
+option[value="success"] {
+	color: #23d160 !important;
+}
+
+option[value="pending"] {
+	color: #ffad04 !important;
+}
+
+option[value="failed"] {
+	color: #dc3545 !important;
+} */
+
+input[type="checkbox"].toggle {
+	opacity: 0;
+	position: absolute;
+	left: -99999px;
+}
+
+input[type="checkbox"].toggle + label {
+	height: 40px;
+	line-height: 40px;
+	background-color: #ccc;
+	padding: 0px 16px;
+	border-radius: 16px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.25s ease-in;
+	box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+input[type="checkbox"].toggle + label:before,
+input[type="checkbox"].toggle + label:hover:before {
+	content: " ";
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 46px;
+	height: 36px;
+	background: #fff;
+	z-index: 2;
+	transition: all 0.25s ease-in;
+	border-radius: 14px;
+}
+
+input[type="checkbox"].toggle + label .off,
+input[type="checkbox"].toggle + label .on {
+	color: #fff;
+}
+
+input[type="checkbox"].toggle + label .off {
+	margin-left: 46px;
+	display: inline-block;
+	color: #2a2f5b !important;
+}
+
+input[type="checkbox"].toggle + label .on {
+	display: none;
+}
+
+input[type="checkbox"].toggle:checked + label .off {
+	display: none;
+}
+
+input[type="checkbox"].toggle:checked + label .on {
+	margin-right: 46px;
+	display: inline-block;
+}
+
+input[type="checkbox"].toggle:checked + label,
+input[type="checkbox"].toggle:focus:checked + label {
+	background-color: var(--secondary-color) !important;
+}
+
+input[type="checkbox"].toggle:checked + label:before,
+input[type="checkbox"].toggle:checked + label:hover:before {
+	background-position: 0 0;
+	top: 2px;
+	left: 100%;
+	margin-left: -48px;
+}
+.info-item {
+	display: flex;
+	justify-content: flex-start;
+	padding: 0.75rem 0;
+	border-bottom: 1px solid #e9ecef;
+	flex-wrap: wrap;
+}
+.info-item:last-child {
+	border-bottom: none;
+}
+.info-label {
+	flex: 0 0 40%;
+	font-weight: bold;
+	color: #495057;
+}
+.info-value {
+	flex: 1;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 1.5em;
+	padding: 2px;
+	margin-left: 2px;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	color: #333 !important;
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+div.dataTables_wrapper div.dataTables_length label {
+	font-weight: 400;
+	text-align: left;
+	margin-top: 8px;
+	white-space: nowrap;
+}
+table.dataTable.row-border tbody th,
+table.dataTable.row-border tbody td,
+table.dataTable.display tbody th,
+table.dataTable.display tbody td {
+	text-align: center !important;
+	/* text-wrap: nowrap; */
+}
+
+.flex-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.form-group {
+	flex: 1;
+	min-width: 0;
+}
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active:hover:active {
+	background: var(--primary-color) !important;
+	color: #e9ecef !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+	background: none !important;
+	border: none !important;
+}
+
+@media (max-width: 767px) {
+	.flex-row {
+		flex-direction: column;
+	}
+}
+.active > .page-link,
+.page-link.active {
+	background: var(--primary-color) !important;
+	border-color: var(--primary-color) !important;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+.card-secondary {
+	transition: transform 0.2s;
+}
+
+.card-secondary:hover {
+	transform: scale(1.05);
+}
+
+.card-title {
+	font-size: 14px !important;
+}
+.m-0 {
+	font-size: 0.9rem !important;
+}
+.counter {
+	font-size: 1.1rem !important;
+}
+.status-label.success,
+.status-label.paid {
+	color: #23d160 !important;
+	font-weight: 600;
+}
+.status-label.created {
+	color: #ffc107 !important;
+	font-weight: 600;
+}
+.activeacc {
+	color: #23d160 !important;
+	font-weight: 600;
+}
+.inactiveacc {
+	color: #dc3545 !important;
+	font-weight: 600;
+}
+.status-label.failed {
+	font-weight: 600;
+}
+.status-label.pending {
+	font-weight: 600;
+}
+.type-label,
+.status-label {
+	text-transform: uppercase !important;
+}
+button.dt-button:first-child,
+div.dt-button:first-child,
+a.dt-button:first-child,
+input.dt-button:first-child {
+	color: #fff !important;
+	background-color: var(--secondary-color) !important;
+}
+.btn-group-vertical > .btn-check:checked + .btn,
+.btn-group-vertical > .btn-check:focus + .btn,
+.btn-group-vertical > .btn.active,
+.btn-group-vertical > .btn:active,
+.btn-group-vertical > .btn:focus,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn-check:checked + .btn,
+.btn-group > .btn-check:focus + .btn,
+.btn-group > .btn.active,
+.btn-group > .btn:active,
+.btn-group > .btn:focus,
+.btn-group > .btn:hover {
+	color: var(--secondary-color) !important;
+}
+.card {
+	background-color: #fff;
+	border-radius: 10px;
+	overflow: none;
+	border: none;
+	position: relative;
+	margin-bottom: 30px;
+	box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+		0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+		0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+		0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+.l-bg-cherry {
+	background: linear-gradient(to right, #493240, #f09) !important;
+	color: #fff;
+}
+
+.l-bg-blue-dark {
+	background: var(--primary-color) !important;
+	color: #fff;
+}
+
+.l-bg-green-dark {
+	background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+	color: #fff;
+}
+
+.l-bg-orange-dark {
+	background: linear-gradient(to right, #a86008, #ffba56) !important;
+	color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas,
+.card .card-statistic-3 .card-icon-large .far,
+.card .card-statistic-3 .card-icon-large .fab,
+.card .card-statistic-3 .card-icon-large .fal {
+	font-size: 110px;
+}
+
+.card .card-statistic-3 .card-icon {
+	text-align: center;
+	line-height: 50px;
+	margin-left: 15px;
+	color: #000;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	opacity: 0.1;
+}
+
+.l-bg-cyan {
+	background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+	color: #fff;
+}
+
+.l-bg-green {
+	background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+	color: #fff;
+}
+
+.l-bg-orange {
+	background: linear-gradient(to right, #f9900e, #ffba56) !important;
+	color: #fff;
+}
+
+.l-bg-cyan {
+	background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
+	color: #fff;
+}
+.card-title2 {
+	color: #fff !important;
+}
