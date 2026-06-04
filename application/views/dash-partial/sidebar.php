@@ -5,7 +5,10 @@
       <!-- Logo Header -->
       <div class="logo-header" data-background-color="dark">
         <a href="/dashboard" class="logo">
-          <img src="assets/img/ngsiwhite.png" alt="navbar brand" class="navbar-brand" />
+          <img src="/assets/img/innovative_icon.png " alt="navbar brand" class="navbar-brand"/>
+          <span class="fw-bold text-white fs-6">
+            Innovative Solutions
+          </span>
         </a>
         <div class="nav-toggle">
           <button class="btn btn-toggle toggle-sidebar">
@@ -60,48 +63,16 @@
           $payment = '
 
             <li class="nav-item ' . (($current_uri == 'transaction' || $current_uri == 'cashin' || $current_uri == 'cashout') ? 'active' : '') . '">
-<a data-bs-toggle="collapse" href="#account"><i class="fas fa-qrcode"></i><p>QRPH</p><span class="caret"></span></a>
+<a data-bs-toggle="collapse" href="#account"><i class="fas fa-qrcode"></i><p>Bank Transcations</p><span class="caret"></span></a>
             <div class="collapse" id="account">
               <ul class="nav nav-collapse">
                
-                <li><a href="cashin"><span class="sub-item">Cash In</span></a></li>
-                <li><a href="cashin-static"><span class="sub-item">Cash In - Static</span></a></li>
-                <li><a href="cashout"><span class="sub-item">Cash Out</span></a></li>
+                <li><a href="cashin"><span class="sub-item">Pay In</span></a></li>
+                <li><a href="cashout"><span class="sub-item">Pay Out</span></a></li>
               </ul>
             </div>
           </li>';
-          $webpay = '
-                                   <li class="nav-item ' . (($current_uri == '2c2p') ? 'active' : '') . '">
-<a data-bs-toggle="collapse" href="#webpay"><i class="fas fa-credit-card"></i><p>Webpay</p><span class="caret"></span></a>                                <div class="collapse" id="webpay">
-                                  <ul class="nav nav-collapse">
-                                    <li><a href="2c2p-transactions"><span class="sub-item">2C2P Transactions</span></a></li>
-                                    
-                                  </ul>
-                                </div>
-                              </li>';
 
-
-          $allbank = '
-                                   <li class="nav-item ' . (($current_uri == 'soa-cashin') ? 'active' : '') . '">
-<a data-bs-toggle="collapse" href="#allbanks"><i class="fas fa-university"></i><p>All Bank</p><span class="caret"></span></a>                                <div class="collapse" id="allbanks">
-                                  <ul class="nav nav-collapse">
-                                    <li><a href="soa-cashin"><span class="sub-item">Cash-In</span></a></li>
-                                    
-                                  </ul>
-                                </div>
-                              </li>';
-
-
-          $settlement_navbar = '
-                              <li class="nav-item ' . (($current_uri == 'merchant-settle-table' || $current_uri == 'client-settle-table') ? 'active' : '') . '">
-                                <a data-bs-toggle="collapse" href="#settelment"><i class="fas fa-handshake"></i><p>Settlement</p><span class="caret"></span></a>
-                                <div class="collapse" id="settelment">
-                                  <ul class="nav nav-collapse">
-                                    <li><a href="merchant-settle-table"><span class="sub-item">Merchant</span></a></li>
-                                    <li><a href="client-settle-table"><span class="sub-item">Client</span></a></li>
-                                  </ul>
-                                </div>
-                              </li>';
 
           $account_navbar = '
                               <li class="nav-item ' . (($current_uri == 'list_account' || $current_uri == 'create_client') ? 'active' : '') . '">
@@ -147,27 +118,6 @@
                                   </ul>
                                 </div>
                               </li>';
-
-          $prefund = '
-                                <li class="nav-item ' . (($current_uri == 'prefund' || $current_uri == 'prefund-history') ? 'active' : '') . '">
-                                <a data-bs-toggle="collapse" href="#prefund"><i class="fas fa-credit-card"></i><p>Prefund</p><span class="caret"></span></a>
-                                <div class="collapse" id="prefund">
-                                  <ul class="nav nav-collapse">
-                                    <li><a href="prefund"><span class="sub-item">Prefund</span></a></li>
-                                    <li><a href="prefund-history"><span class="sub-item">Prefund History</span></a></li>
-                                  </ul>
-                                </div>
-                              </li>';
-          $bankdeposit = '
-                         <li class="nav-item ' . (($current_uri == 'bank-deposit' || $current_uri == 'bank-deposit-history') ? 'active' : '') . '">
-                                <a data-bs-toggle="collapse" href="#bank-deposit"><i class="fas fa-wallet	"></i><p>Bank Deposit</p><span class="caret"></span></a>
-                                <div class="collapse" id="bank-deposit">
-                                  <ul class="nav nav-collapse">
-                                    <li><a href="bank-deposit"><span class="sub-item">Bank Deposit</span></a></li>
-                                    <li><a href="bank-deposit-history"><span class="sub-item">Bank Deposit History</span></a></li>
-                                  </ul>
-                                </div>
-                              </li>';
           $user_type = $this->session->userdata('usertype');
           $sub_user_type = $this->session->userdata('sub_usertype');
           $company_name = $this->session->userdata('company_name');
@@ -176,32 +126,25 @@
             switch ($sub_user_type) {
               case 'ADMIN':
                 echo $dashboard;
-                echo $allbank;
                 echo $payment;
-                echo $webpay;
-                echo $settlement_navbar;
                 echo $users_navbar;
                 echo $logs_navbar;
-                echo $prefund;
-                echo $bankdeposit;
+
 
                 break;
 
               case 'ACCOUNTING':
                 echo $dashboard;
-                echo $allbank;
                 echo $payment;
                 break;
 
               case 'TECH':
                 echo $dashboard;
-                echo $allbank;
                 echo $payment;
                 break;
 
               case 'CSR':
                 echo $dashboard;
-                echo $allbank;
                 echo $payment;
                 break;
 
@@ -214,14 +157,10 @@
             echo $payment;
           } else {
             echo $dashboard;
-            echo $allbank;
             echo $payment;
-            echo $settlement_navbar;
             echo $account_navbar;
             echo $users_navbar;
             echo $logs_navbar;
-            echo $prefund;
-            echo $bankdeposit;
           }
           ?>
 
@@ -231,3 +170,4 @@
       </div>
     </div>
   </div>
+  

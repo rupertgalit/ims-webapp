@@ -6,10 +6,12 @@
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Payment Page | Secure Checkout</title>
+  <title>Innovative Solutions | Payment Form</title>
+  <link rel="icon" type="image/x-icon" href="/assets/img/innovative_icon.png">
   <style>
-    @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);
+    @import url(https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap);
 
+    .company-text h2,
     body,
     h1 {
       color: var(--text)
@@ -35,8 +37,8 @@
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at top left, rgba(31, 99, 146, .12), transparent 30%), radial-gradient(circle at bottom right, rgba(13, 45, 68, .12), transparent 35%), linear-gradient(135deg, #eef4fb 0, #f8fbff 45%, #edf3f9 100%);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+      background: #f5f5f5;
+      font-family: Raleway, sans-serif;
       padding: 40px 20px
     }
 
@@ -69,9 +71,30 @@
       top: 20px
     }
 
+    .company-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px
+    }
+
     .company-logo img {
       height: 54px;
-      margin-bottom: 18px
+      margin-bottom: 0
+    }
+
+    .company-text h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.2
+    }
+
+    .company-text span {
+      display: block;
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 2px
     }
 
     h1 {
@@ -126,6 +149,11 @@
       color: #425466
     }
 
+    .pay-btn,
+    .peso {
+      font-weight: 700
+    }
+
     .input-field {
       border: 1px solid var(--border);
       width: 100%;
@@ -134,14 +162,18 @@
       font-size: .92rem;
       outline: 0;
       background: #fff;
-      transition: border .2s, box-shadow .2s;
-      font-family: inherit
+      transition: border .2s, box-shadow .2s
     }
 
     .method-option,
     .pay-btn {
       cursor: pointer;
       transition: .2s
+    }
+
+    .pay-btn,
+    .toast {
+      transition: .25s
     }
 
     textarea.input-field {
@@ -229,16 +261,18 @@
     .pay-btn {
       margin-top: 28px;
       width: 100%;
-      height: 56px;
+      padding: 14px;
       border: none;
-      border-radius: 16px;
-      font-size: 1rem;
-      box-shadow: 0 12px 24px rgba(99, 91, 255, .22)
+      border-radius: 10px;
+      background: linear-gradient(195deg, #42424a, #191919);
+      color: #fff;
+      cursor: pointer;
+      letter-spacing: 1px
     }
 
     .pay-btn:hover {
-      background: var(--primary-hover);
-      transform: translateY(-1px)
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(25, 25, 25, .25)
     }
 
     .pay-btn:active {
@@ -254,7 +288,6 @@
       left: 16px;
       top: 50%;
       transform: translateY(-50%);
-      font-weight: 700;
       color: #425466
     }
 
@@ -276,7 +309,6 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
       opacity: 0;
       visibility: hidden;
-      transition: .25s;
       z-index: 9999;
       max-width: 340px;
       width: max-content
@@ -359,223 +391,158 @@
 </head>
 
 <body>
+  <div class="page-wrapper">
+    <div class="left-panel">
+      <div class="company-logo">
+        <img
+          src="/assets/img/innovative_icon.png"
+          alt="Innovative Solutions Logo"
+          onerror="this.src = 'https://placehold.co/200x70?text=Innovative Solutions'" />
 
-  <form action="payment-vlpay" method="POST">
-    <div class="page-wrapper">
-      <div class="left-panel">
-        <div class="company-logo">
-          <img
-            src="/assets/img/ngsiblack.png"
-            alt="NGSI logo"
-            onerror="this.src = 'https://placehold.co/200x70?text=NGSI'" />
+        <div class="company-text">
+          <h2>Innovative Solutions</h2>
+          <span>Secure Payment Portal</span>
         </div>
-        <h1>Payment Form</h1>
-        <div class="hero-sub">
-          Fast, secure, and reliable payment processing for your transactions.
-        </div>
+      </div>
+      <h1>Payment Form</h1>
+      <div class="hero-sub">
+        Fast, secure, and reliable payment processing for your transactions.
+      </div>
 
-        <div class="section-title">Contact Details</div>
-        <div class="section-sub">Enter your personal contact information.</div>
+      <div class="section-title">Contact Details</div>
+      <div class="section-sub">Enter your personal contact information.</div>
 
-        <!-- Full Name row -->
-        <div class="input-row">
-          <div class="input-group">
-            <div class="field-wrapper">
-              <label class="input-label"><span class="label-with-req">Full Name<span class="required-star">*</span></span></label>
-              <input
-                id="fullName"
-                class="input-field"
-                name="name"
-                type="text"
-                placeholder="Enter your name"
-                autocomplete="name" />
-              <div class="error-message" id="name-error"></div>
-            </div>
-          </div>
-
-          <div class="input-group">
-            <div class="field-wrapper">
-              <label class="input-label"><span class="label-with-req">Mobile Number<span class="required-star">*</span></span></label>
-              <input
-                id="mobile"
-                class="input-field"
-                name="phone_number"
-                type="tel"
-                placeholder="09XXXXXXXXX"
-                autocomplete="tel" />
-              <div class="error-message" id="mobile-error"></div>
-            </div>
+      <!-- Full Name row -->
+      <div class="input-row">
+        <div class="input-group">
+          <div class="field-wrapper">
+            <label class="input-label"><span class="label-with-req">Full Name<span class="required-star">*</span></span></label>
+            <input
+              id="fullName"
+              class="input-field"
+              type="text"
+              placeholder="Enter your name"
+              autocomplete="name" />
+            <div class="error-message" id="name-error"></div>
           </div>
         </div>
 
-        <!-- Email Address row -->
-        <div class="input-row">
-          <div class="input-group">
-            <div class="field-wrapper">
-              <label class="input-label"><span class="label-with-req">Email Address<span class="required-star">*</span></span></label>
-              <input
-                id="email"
-                class="input-field"
-                name="email"
-                type="email"
-                placeholder="Enter your email address"
-                autocomplete="email" />
-              <div class="error-message" id="email-error"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Description row: NOW REQUIRED - not optional -->
-        <div class="input-row">
-          <div class="input-group">
-            <div class="field-wrapper">
-              <label class="input-label"><span class="label-with-req">Description<span class="required-star">*</span></span></label>
-              <textarea
-                id="description"
-                class="input-field"
-                name="description"
-                maxlength="200"
-                placeholder="What is this payment for? (required: e.g., donation, membership, invoice, service)"></textarea>
-              <div class="error-message" id="description-error"></div>
-            </div>
+        <div class="input-group">
+          <div class="field-wrapper">
+            <label class="input-label"><span class="label-with-req">Mobile Number<span class="required-star">*</span></span></label>
+            <input
+              id="mobile"
+              class="input-field"
+              type="tel"
+              placeholder="09XXXXXXXXX"
+              autocomplete="tel" />
+            <div class="error-message" id="mobile-error"></div>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT PANEL: amount & payment method -->
-      <div class="right-panel">
-        <h1>Select Payment</h1>
-        <div class="hero-sub">Choose amount and payment method</div>
-
-        <div class="section-title">Payment Amount</div>
-        <div class="section-sub">Specify the amount you want to pay.</div>
-
-        <div class="input-row">
-          <div class="input-group">
-            <div class="field-wrapper">
-              <label class="input-label"><span class="label-with-req">Amount (PHP)<span class="required-star">*</span></span></label>
-              <div class="amount-wrapper">
-                <span class="peso">₱</span>
-                <input
-                  id="amount"
-                  class="input-field amount-input"
-                  name="amount"
-                  type="text"
-                  inputmode="decimal"
-                  placeholder="0.00"
-                  autocomplete="off" />
-              </div>
-              <div class="error-message" id="amount-error"></div>
-            </div>
+      <!-- Email Address row -->
+      <div class="input-row">
+        <div class="input-group">
+          <div class="field-wrapper">
+            <label class="input-label"><span class="label-with-req">Email Address<span class="required-star">*</span></span></label>
+            <input
+              id="email"
+              class="input-field"
+              type="email"
+              placeholder="Enter your email address"
+              autocomplete="email" />
+            <div class="error-message" id="email-error"></div>
           </div>
         </div>
+      </div>
 
-        <div class="section-title">Payment Method</div>
-        <div class="section-sub">
-          Select your preferred payment option (required).
+      <!-- Description row: NOW REQUIRED - not optional -->
+      <div class="input-row">
+        <div class="input-group">
+          <div class="field-wrapper">
+            <label class="input-label"><span class="label-with-req">Description<span class="required-star">*</span></span></label>
+            <textarea
+              id="description"
+              class="input-field"
+              maxlength="200"
+              placeholder="What is this payment for? (required: e.g., donation, membership, invoice, service)"></textarea>
+            <div class="error-message" id="description-error"></div>
+          </div>
         </div>
-
-        <!-- <div class="methods-grid">
-          <div class="method-option" data-method="gcash">
-            <div class="check-icon">✓</div>
-            <img
-              src="/assets/img/payment-options/gcash_logo.png"
-              alt="GCash"
-              loading="lazy"
-              onerror="this.src = 'https://placehold.co/100x50?text=GCash'"
-            />
-          </div>
-          <div class="method-option" data-method="maya">
-            <div class="check-icon">✓</div>
-            <img
-              src="/assets/img/payment-options/maya_logo.png"
-              alt="Maya"
-              loading="lazy"
-              onerror="this.src = 'https://placehold.co/100x50?text=Maya'"
-            />
-          </div>
-          <div class="method-option" data-method="gotyme">
-            <div class="check-icon">✓</div>
-            <img
-              src="/assets/img/payment-options/gotyme_logo.png"
-              alt="GoTyme"
-              loading="lazy"
-              onerror="this.src = 'https://placehold.co/100x50?text=GoTyme'"
-            />
-          </div>
-          <div class="method-option" data-method="qrph">
-            <div class="check-icon">✓</div>
-            <img
-              src="/assets/img/payment-options/qrph_logo.svg"
-              alt="QRPh"
-              loading="lazy"
-              onerror="this.src = 'https://placehold.co/100x50?text=QRPh'"
-            />
-          </div>
-        </div> -->
-
-        <div class="methods-grid">
-
-          <!-- GCash -->
-          <label class="method-option" data-method="gcash">
-            <input type="radio" name="payment_method" value="GCASH" hidden />
-
-            <div class="check-icon">✓</div>
-
-            <img
-              src="/assets/img/payment-options/gcash_logo.png"
-              alt="GCash"
-              loading="lazy"
-              onerror="this.src='https://placehold.co/100x50?text=GCash'" />
-          </label>
-
-          <!-- Maya -->
-          <label class="method-option" data-method="maya">
-            <input type="radio" name="payment_method" value="MAYA" hidden />
-
-            <div class="check-icon">✓</div>
-
-            <img
-              src="/assets/img/payment-options/maya_logo.png"
-              alt="Maya"
-              loading="lazy"
-              onerror="this.src='https://placehold.co/100x50?text=Maya'" />
-          </label>
-
-          <!-- GoTyme -->
-          <label class="method-option" data-method="gotyme">
-            <input type="radio" name="payment_method" value="GOTYME" hidden />
-
-            <div class="check-icon">✓</div>
-
-            <img
-              src="/assets/img/payment-options/gotyme_logo.png"
-              alt="GoTyme"
-              loading="lazy"
-              onerror="this.src='https://placehold.co/100x50?text=GoTyme'" />
-          </label>
-
-          <!-- QRPh -->
-          <label class="method-option" data-method="qrph">
-            <input type="radio" name="payment_method" value="QRPH" hidden />
-
-            <div class="check-icon">✓</div>
-
-            <img
-              src="/assets/img/payment-options/qrph_logo.svg"
-              alt="QRPh"
-              loading="lazy"
-              onerror="this.src='https://placehold.co/100x50?text=QRPh'" />
-          </label>
-
-        </div>
-
-        <button type="submit" class="pay-btn" id="payBtn">Complete Payment</button>
       </div>
     </div>
-  </form>
 
+    <!-- RIGHT PANEL: amount & payment method -->
+    <div class="right-panel">
+      <h1>Select Payment</h1>
+      <div class="hero-sub">Choose amount and payment method</div>
 
+      <div class="section-title">Payment Amount</div>
+      <div class="section-sub">Specify the amount you want to pay.</div>
+
+      <div class="input-row">
+        <div class="input-group">
+          <div class="field-wrapper">
+            <label class="input-label"><span class="label-with-req">Amount (PHP)<span class="required-star">*</span></span></label>
+            <div class="amount-wrapper">
+              <span class="peso">₱</span>
+              <input
+                id="amount"
+                class="input-field amount-input"
+                type="text"
+                inputmode="decimal"
+                placeholder="0.00"
+                autocomplete="off" />
+            </div>
+            <div class="error-message" id="amount-error"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Payment Method</div>
+      <div class="section-sub">
+        Select your preferred payment option (required).
+      </div>
+
+      <div class="methods-grid">
+        <div class="method-option" data-method="gcash">
+          <div class="check-icon">✓</div>
+          <img
+            src="/assets/img/payment-options/gcash_logo.png"
+            alt="GCash"
+            loading="lazy"
+            onerror="this.src = 'https://placehold.co/100x50?text=GCash'" />
+        </div>
+        <div class="method-option" data-method="maya">
+          <div class="check-icon">✓</div>
+          <img
+            src="/assets/img/payment-options/maya_logo.png"
+            alt="Maya"
+            loading="lazy"
+            onerror="this.src = 'https://placehold.co/100x50?text=Maya'" />
+        </div>
+        <div class="method-option" data-method="gotyme">
+          <div class="check-icon">✓</div>
+          <img
+            src="/assets/img/payment-options/gotyme_logo.png"
+            alt="GoTyme"
+            loading="lazy"
+            onerror="this.src = 'https://placehold.co/100x50?text=GoTyme'" />
+        </div>
+        <div class="method-option" data-method="qrph">
+          <div class="check-icon">✓</div>
+          <img
+            src="/assets/img/payment-options/qrph_logo.svg"
+            alt="QRPh"
+            loading="lazy"
+            onerror="this.src = 'https://placehold.co/100x50?text=QRPh'" />
+        </div>
+      </div>
+
+      <button class="pay-btn" id="payBtn">Complete Payment</button>
+    </div>
+  </div>
   <div id="toast" class="toast"></div>
   <script>
     // ======================== DOM Elements ========================
@@ -818,48 +785,40 @@
 
       const formValid = validateForm();
 
-      // Get selected radio
-      const selectedPayment = document.querySelector(
-        'input[name="payment_method"]:checked'
+      const selectedPaymentDiv = document.querySelector(
+        ".method-option.selected",
       );
-
-      const methodValue = selectedPayment ? selectedPayment.value : null;
+      let methodValue = null;
+      if (selectedPaymentDiv) {
+        methodValue = selectedPaymentDiv.getAttribute("data-method");
+      }
 
       if (!formValid) {
         const firstErrorField = document.querySelector(".error-field");
-
         if (firstErrorField) {
           firstErrorField.scrollIntoView({
             behavior: "smooth",
             block: "center",
           });
         }
-
         showToast("Please complete all required fields correctly.");
         return;
       }
 
       if (!methodValue) {
         showToast(
-          "Please select a payment method (GCash, Maya, GoTyme, or QRPh)."
+          "Please select a payment method (GCash, Maya, GoTyme, or QRPh).",
         );
-
         const methodsGrid = document.querySelector(".methods-grid");
-
         if (methodsGrid) {
           methodsGrid.style.transition = "0.1s";
           methodsGrid.style.boxShadow = "0 0 0 2px #e53e3e";
-
           setTimeout(() => {
             methodsGrid.style.boxShadow = "";
           }, 800);
         }
-
         return;
       }
-
-      // submit form if all valid
-      document.querySelector("form").submit();
     });
 
     // Ensure initial errors hidden

@@ -21,7 +21,7 @@
                 <div class="pt-1 pb-1 pl-0 pr-0 text-center">
                   <h4 class="m-1"><span class="counter">₱<?=  number_format($cashin['all']['txn_amount'], 2, '.', ',')?>
 
-                      <p class="m-0">YTD Cash In Amount</p>
+                      <p class="m-0">YTD Pay In Amount</p>
                 </div>
               </div>
               <div class="col-6">
@@ -42,7 +42,7 @@
                 <div class="pt-1 pb-1 pl-0 pr-0 text-center">
                   <h4 class="m-1"><span class="counter">₱<?=   number_format($cashin['today']['txn_amount'], 2, '.', ',') ?>
 
-                      <p class="m-0">Total Cash In Today
+                      <p class="m-0">Total Pay In Today
                       </p>
                 </div>
               </div>
@@ -64,7 +64,7 @@
                 <div class="pt-1 pb-1 pl-0 pr-0 text-center">
                   <h4 class="m-1"><span class="counter">₱<?= number_format($cashin['yesterday']['txn_amount'], 2, '.', ',') ?>
 
-                      <p class="m-0">Total Cash In Yesterday
+                      <p class="m-0">Total Pay In Yesterday
                       </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Cash In Daily Amount</div>
+              <div class="card-title">Pay In Daily Amount</div>
             </div>
             <div class="card-body">
               <div class="chart-container">
@@ -97,7 +97,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header">
-              <div class="card-title">Cash In Monthly Amount</div>
+              <div class="card-title">Pay In Monthly Amount</div>
             </div>
             <div class="card-body">
               <div class="chart-container">
@@ -121,7 +121,7 @@
                   <h4 class="d-flex align-items-center mb-0">
                     <?= $cashin['all']['count_txn_amount'] ?>
                   </h4>
-                  <span>Cash In
+                  <span>Pay In
 
                     <i class="fa fa-arrow-up"></i></span>
                 </div>
@@ -151,7 +151,7 @@
 
                     <?= $cashin['today']['count_txn_amount'] ?>
                   </h4>
-                  <span>Cash In
+                  <span>Pay In
 
                     <i class="fa fa-arrow-up"></i></span>
                 </div>
@@ -182,7 +182,7 @@
 
                     <?= $cashin['yesterday']['count_txn_amount'] ?>
                   </h4>
-                  <span>Cash In
+                  <span>Pay In
                     <i class="fa fa-arrow-up"></i></span>
                 </div>
                 <!-- <div class="col-4 text-right">
@@ -236,7 +236,7 @@
 		c0,15.259-12.419,27.677-27.68,27.677C407.94,124.72,395.527,112.308,395.527,97.043z" />
                           </g>
                         </svg>
-                        Cash In Total Request
+                        Pay In Total Request
                       </span>
                       <span><?= htmlspecialchars($c['cashin_total_request']) ?></span>
                     </li>
@@ -317,7 +317,6 @@
 
 
 </div>
-
 <?php $this->load->view('dash-partial/footer.php'); ?>
 <script>
   $(function() {
@@ -365,7 +364,7 @@
     data: {
       labels: labels,
       datasets: [{
-          label: "Cash In",
+          label: "Pay In",
           backgroundColor: "rgb(23, 125, 255)",
           borderColor: "rgb(23, 125, 255)",
           data: weekcashInData
@@ -390,7 +389,7 @@
           label: function(tooltipItem, data) {
             var datasetIndex = tooltipItem.datasetIndex;
             var value = tooltipItem.yLabel;
-            var cashInOrOut = datasetIndex === 0 ? "Cash In" : "Cash Out";
+            var cashInOrOut = datasetIndex === 0 ? "Pay In" : "Cash Out";
             var amount = datasetIndex === 0 ? weekcashInAmount[tooltipItem.index] : weekcashOutAmount[tooltipItem.index];
             var fee = datasetIndex === 0 ? weekcashInFee[tooltipItem.index] : weekcashOutFee[tooltipItem.index];
 
@@ -437,7 +436,7 @@
     data: {
       labels: labels,
       datasets: [{
-          label: "Cash In",
+          label: "Pay In",
           backgroundColor: "rgb(23, 125, 255)",
           borderColor: "rgb(23, 125, 255)",
           data: cashInData
@@ -462,7 +461,7 @@
           label: function(tooltipItem, data) {
             var datasetIndex = tooltipItem.datasetIndex;
             var value = tooltipItem.yLabel;
-            var cashInOrOut = datasetIndex === 0 ? "Cash In" : "Cash Out";
+            var cashInOrOut = datasetIndex === 0 ? "Pay In" : "Cash Out";
             var amount = datasetIndex === 0 ? cashInAmount[tooltipItem.index] : cashOutAmount[tooltipItem.index];
             var fee = datasetIndex === 0 ? cashInFee[tooltipItem.index] : cashOutFee[tooltipItem.index];
 
