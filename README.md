@@ -1,3 +1,2 @@
 
-# demo-webapp
 # ims-webapp
