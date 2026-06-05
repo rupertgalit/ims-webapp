@@ -187,9 +187,9 @@
             <div class="brand-text">Innovative Solutions Dashboard</div>
         </div>
 
-        <?php if ($this->session->flashdata('error')): ?>
+        <?php if ($this->session->flashdata('error_message')): ?>
           <div class="alert alert-danger">
-            <?= $this->session->flashdata('error'); ?>
+            <?= $this->session->flashdata('error_message'); ?>
           </div>
         <?php endif; ?>
 

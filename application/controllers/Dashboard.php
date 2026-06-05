@@ -220,7 +220,7 @@ class Dashboard extends CI_Controller
             'sess_id'      => $this->session->userdata('session_id'),
             'date_from'    => $input_date_from,
             'date_to'      => $input_date_to,
-            'trans_type'   => 'cashin',
+            'trans_type'   => 'cashin_vlpay',
             'status'       => $status,
             'company_code' => $client
          );

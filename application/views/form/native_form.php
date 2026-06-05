@@ -397,7 +397,7 @@
   </style>
 </head>
 
-<form action="vlpay-payment" method="POST">
+<form action="payment-vlpay" method="POST">
         <div class="page-wrapper">
             <div class="left-panel">
                 <div class="company-logo">
