@@ -11,9 +11,9 @@
     } elseif (uri_string() == 'banks') {
         $page_title = 'Innovative Solutions - All Bank';
     } elseif (uri_string() == 'cashin') {
-        $page_title = 'Innovative Solutions - Cash In';
+        $page_title = 'Innovative Solutions - Pay In';
     } elseif (uri_string() == 'cashout') {
-        $page_title = 'Innovative Solutions - Cash Out';
+        $page_title = 'Innovative Solutions - Pay Out';
     } elseif (uri_string() == 'merchant-settle-table') {
         $page_title = 'Innovative Solutions - Merchant';
     } elseif (uri_string() == 'client-settle-table') {
