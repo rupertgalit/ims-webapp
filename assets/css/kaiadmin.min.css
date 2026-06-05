@@ -8990,10 +8990,10 @@ label.error {
 	}
 }
 body {
-	background: #f5f7fd;
+	background: #f5f5f5;
 }
 body[data-background-color="bg1"] {
-	background: #f5f7fd;
+	background: #f5f5f5;
 }
 body[data-background-color="bg2"] {
 	background: #fff;

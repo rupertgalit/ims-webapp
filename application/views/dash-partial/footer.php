@@ -6,8 +6,8 @@
         <span class="text-muted small">Powered by</span>
 
         <a href="/dashboard" class="d-flex align-items-center text-decoration-none">
-            <img src="https://rbguinobatan.com/wp-content/themes/ruralbank2020/img/Logo.png"
-                 alt="Logo"
+            <img src="/assets/img/rgbi_logo.png"
+                 alt="RGBI Logo"
                  style="width:200px; object-fit:contain;">
 
         </a>

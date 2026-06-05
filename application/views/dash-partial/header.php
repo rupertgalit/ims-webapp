@@ -11,9 +11,9 @@
     } elseif (uri_string() == 'banks') {
         $page_title = 'Innovative Solutions - All Bank';
     } elseif (uri_string() == 'cashin') {
-        $page_title = 'Innovative Solutions - Cash In';
+        $page_title = 'Innovative Solutions - Pay In';
     } elseif (uri_string() == 'cashout') {
-        $page_title = 'Innovative Solutions - Cash Out';
+        $page_title = 'Innovative Solutions - Pay Out';
     } elseif (uri_string() == 'merchant-settle-table') {
         $page_title = 'Innovative Solutions - Merchant';
     } elseif (uri_string() == 'client-settle-table') {
@@ -58,7 +58,7 @@
     href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../assets/css/plugins.min.css" />
-  <link rel="stylesheet" href="../assets/css/kaiadmin.min.css?v=08122025" />
+  <link rel="stylesheet" href="../assets/css/kaiadmin.min.css?v=06042025" />
   <link rel="stylesheet" href="../assets/css/style.css?v=09042025" />
   <link rel="stylesheet" href="../assets/css/createaccount.css" />
   <link rel="stylesheet" href="../assets/css/dtbuttons.css?v=05272025" />

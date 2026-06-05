@@ -481,159 +481,159 @@
     }
   });
 </script>
-<script src="https://amwal.doe.net.sa/public/vendor/adminLTE/plugins/flot/jquery.flot.js"></script>
-<script src="https://amwal.doe.net.sa/public/vendor/adminLTE/plugins/flot/plugins/jquery.flot.resize.js"></script>
-<script src="https://amwal.doe.net.sa/public/vendor/adminLTE/plugins/flot/plugins/jquery.flot.pie.js"></script>
-<script>
-  $(function() {
-    /*
-     * Flot Interactive Chart
-     * -----------------------
-     */
-    // We use an inline data source in the example, usually data would
-    // be fetched from a server
-    var data = [],
-      totalPoints = 100
+  <!-- <script src="https://amwal.doe.net.sa/public/vendor/adminLTE/plugins/flot/jquery.flot.js"></script>
+  <script src="https://amwal.doe.net.sa/public/vendor/adminLTE/plugins/flot/plugins/jquery.flot.resize.js"></script>
+  <script src="https://amwal.doe.net.sa/public/vendor/adminLTE/plugins/flot/plugins/jquery.flot.pie.js"></script>
+  <script>
+    $(function() {
+      /*
+      * Flot Interactive Chart
+      * -----------------------
+      */
+      // We use an inline data source in the example, usually data would
+      // be fetched from a server
+      var data = [],
+        totalPoints = 100
 
-    function getRandomData() {
+      function getRandomData() {
 
-      if (data.length > 0) {
-        data = data.slice(1)
-      }
-
-      // Do a random walk
-      while (data.length < totalPoints) {
-
-        var prev = data.length > 0 ? data[data.length - 1] : 50,
-          y = prev + Math.random() * 10 - 5
-
-        if (y < 0) {
-          y = 0
-        } else if (y > 100) {
-          y = 100
+        if (data.length > 0) {
+          data = data.slice(1)
         }
 
-        data.push(y)
+        // Do a random walk
+        while (data.length < totalPoints) {
+
+          var prev = data.length > 0 ? data[data.length - 1] : 50,
+            y = prev + Math.random() * 10 - 5
+
+          if (y < 0) {
+            y = 0
+          } else if (y > 100) {
+            y = 100
+          }
+
+          data.push(y)
+        }
+
+        // Zip the generated y values with the x values
+        var res = []
+        for (var i = 0; i < data.length; ++i) {
+          res.push([i, data[i]])
+        }
+
+        return res
       }
 
-      // Zip the generated y values with the x values
-      var res = []
-      for (var i = 0; i < data.length; ++i) {
-        res.push([i, data[i]])
-      }
-
-      return res
-    }
-
-    var interactive_plot = $.plot('#interactive', [{
-      data: getRandomData(),
-    }], {
-      grid: {
-        borderColor: '#f3f3f3',
-        borderWidth: 1,
-        tickColor: '#f3f3f3'
-      },
-      series: {
-        color: '#3c8dbc',
-        lines: {
-          lineWidth: 2,
-          show: true,
-          fill: true,
+      var interactive_plot = $.plot('#interactive', [{
+        data: getRandomData(),
+      }], {
+        grid: {
+          borderColor: '#f3f3f3',
+          borderWidth: 1,
+          tickColor: '#f3f3f3'
         },
-      },
-      yaxis: {
-        min: 0,
-        max: 100,
-        show: true
-      },
-      xaxis: {
-        show: true
+        series: {
+          color: '#3c8dbc',
+          lines: {
+            lineWidth: 2,
+            show: true,
+            fill: true,
+          },
+        },
+        yaxis: {
+          min: 0,
+          max: 100,
+          show: true
+        },
+        xaxis: {
+          show: true
+        }
+      })
+
+      var updateInterval = 500 //Fetch data ever x milliseconds
+      var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
+      function update() {
+
+        interactive_plot.setData([getRandomData()])
+
+        // Since the axes don't change, we don't need to call plot.setupGrid()
+        interactive_plot.draw()
+        if (realtime === 'on') {
+          setTimeout(update, updateInterval)
+        }
       }
-    })
 
-    var updateInterval = 500 //Fetch data ever x milliseconds
-    var realtime = 'on' //If == to on then fetch data every x seconds. else stop fetching
-    function update() {
-
-      interactive_plot.setData([getRandomData()])
-
-      // Since the axes don't change, we don't need to call plot.setupGrid()
-      interactive_plot.draw()
+      //INITIALIZE REALTIME DATA FETCHING
       if (realtime === 'on') {
-        setTimeout(update, updateInterval)
+        update()
       }
-    }
-
-    //INITIALIZE REALTIME DATA FETCHING
-    if (realtime === 'on') {
-      update()
-    }
-    //REALTIME TOGGLE
-    $('#realtime .btn').click(function() {
-      if ($(this).data('toggle') === 'on') {
-        realtime = 'on'
-      } else {
-        realtime = 'off'
-      }
-      update()
+      //REALTIME TOGGLE
+      $('#realtime .btn').click(function() {
+        if ($(this).data('toggle') === 'on') {
+          realtime = 'on'
+        } else {
+          realtime = 'off'
+        }
+        update()
+      })
     })
-  })
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const cardsPerPage = 8;
-    const cards = document.querySelectorAll("#card-container > .col-12");
-    const paginationControls = document.getElementById("pagination-controls");
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const cardsPerPage = 8;
+      const cards = document.querySelectorAll("#card-container > .col-12");
+      const paginationControls = document.getElementById("pagination-controls");
 
-    let currentPage = 1;
-    const totalPages = Math.ceil(cards.length / cardsPerPage);
+      let currentPage = 1;
+      const totalPages = Math.ceil(cards.length / cardsPerPage);
 
-    function showPage(page) {
-      currentPage = page;
+      function showPage(page) {
+        currentPage = page;
 
-      cards.forEach((card, index) => {
-        card.style.display =
-          index >= (page - 1) * cardsPerPage && index < page * cardsPerPage ?
-          "block" :
-          "none";
-      });
-
-      renderPagination();
-    }
-
-    function renderPagination() {
-      paginationControls.innerHTML = "";
-
-      if (currentPage > 1) {
-        const prevLi = document.createElement("li");
-        prevLi.className = "page-item";
-        const prevA = document.createElement("a");
-        prevA.className = "page-link";
-        prevA.href = "#";
-        prevA.innerHTML = "&larr; Previous";
-        prevA.addEventListener("click", function(e) {
-          e.preventDefault();
-          showPage(currentPage - 1);
+        cards.forEach((card, index) => {
+          card.style.display =
+            index >= (page - 1) * cardsPerPage && index < page * cardsPerPage ?
+            "block" :
+            "none";
         });
-        prevLi.appendChild(prevA);
-        paginationControls.appendChild(prevLi);
-      }
-      if (currentPage < totalPages) {
-        const nextLi = document.createElement("li");
-        nextLi.className = "page-item";
-        const nextA = document.createElement("a");
-        nextA.className = "page-link";
-        nextA.href = "#";
-        nextA.innerHTML = "Next &rarr;";
-        nextA.addEventListener("click", function(e) {
-          e.preventDefault();
-          showPage(currentPage + 1);
-        });
-        nextLi.appendChild(nextA);
-        paginationControls.appendChild(nextLi);
-      }
-    }
 
-    showPage(currentPage);
-  });
-</script>
+        renderPagination();
+      }
+
+      function renderPagination() {
+        paginationControls.innerHTML = "";
+
+        if (currentPage > 1) {
+          const prevLi = document.createElement("li");
+          prevLi.className = "page-item";
+          const prevA = document.createElement("a");
+          prevA.className = "page-link";
+          prevA.href = "#";
+          prevA.innerHTML = "&larr; Previous";
+          prevA.addEventListener("click", function(e) {
+            e.preventDefault();
+            showPage(currentPage - 1);
+          });
+          prevLi.appendChild(prevA);
+          paginationControls.appendChild(prevLi);
+        }
+        if (currentPage < totalPages) {
+          const nextLi = document.createElement("li");
+          nextLi.className = "page-item";
+          const nextA = document.createElement("a");
+          nextA.className = "page-link";
+          nextA.href = "#";
+          nextA.innerHTML = "Next &rarr;";
+          nextA.addEventListener("click", function(e) {
+            e.preventDefault();
+            showPage(currentPage + 1);
+          });
+          nextLi.appendChild(nextA);
+          paginationControls.appendChild(nextLi);
+        }
+      }
+
+      showPage(currentPage);
+    });
+  </script> -->
